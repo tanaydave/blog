@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../firebaseConfig";
 import { useNavigate } from "react-router-dom";
+// import "./createPost.css"
 
 function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
@@ -22,15 +23,15 @@ function CreatePost({ isAuth }) {
   useEffect(() => {
     if (!isAuth) {
       navigate("/login");
-    } 
-  },[]);
+    }
+  }, []);
 
   return (
     <div className="createPostPage">
       <div className="cpContainer">
         <h1>Create A Post</h1>
         <div className="inputGp">
-          <label> Title:</label>
+          <label className="titleLabel"> Title:</label>
           <input
             placeholder="Title..."
             onChange={(event) => {
@@ -39,7 +40,7 @@ function CreatePost({ isAuth }) {
           />
         </div>
         <div className="inputGp">
-          <label> Post:</label>
+          <label className="postLabel"> Post:</label>
           <textarea
             placeholder="Post..."
             onChange={(event) => {

@@ -1,5 +1,12 @@
+ 
+ 
+ body{
+  margin:0px;
+ }
  .App {
+  
   text-align: center;
+  box-sizing: border-box;
 }
 /*
 .App-logo {
@@ -36,8 +43,115 @@
     transform: rotate(360deg);
   }
 } */
+.navbar{ 
+  display: flex;
+  justify-content: center;
+  gap:500px;
+  font-size: 1.5rem;
+  height:5rem ;
+  background-color: #0935d4;
+  color:rgb(19, 35, 182);
+}
+.navbar-div{
+  display:inline-block;
+  position: relative;
+  top:20%;
+}
 a{
-  margin:1rem;
-  color:rgb(255, 98, 0);
+  padding:0.3rem;
+  margin:2rem;
+  /* color:rgb(255, 98, 0); */
+  color:rgb(218, 220, 236);
   text-decoration: none;
+}
+a:hover{
+  
+  /* transition: 0.3s; */
+  border:solid black 0.1rem;
+  border-radius: 0.5rem;
+  color:black;
+}
+.btn-user{
+  font-size:1.2rem;
+  margin-left:1rem;
+
+}
+.createPostPage{
+  height: 25rem;
+  display:flex;
+  justify-content: center;
+}
+
+.cpContainer{
+  color:aliceblue;
+  background-color: black;
+  width: 50rem;
+  
+}
+.inputGp{
+  padding:2rem;
+}
+
+.titleLabel{
+  font-size:x-large;
+  margin:1rem;
+  position:relative;
+  bottom:0.1rem;
+}
+
+.postLabel{
+  font-size:x-large;
+  margin:1rem;
+  position:relative;
+  bottom:1.5rem;
+}
+textarea{
+  width: 10rem;
+  height: 5rem;
+}
+.homepage{
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+.post{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 40rem;
+  border: 0.1rem solid red;
+  margin:0.5rem;
+  position: relative;
+  left:30rem;
+
+}
+.title{
+  padding:0;
+  /* border:solid blue 0.11rem; */
+}
+.btn-user{
+  text-decoration: none;
+  color:white;
+  background-color:#0935d4 ;
+  border-style: none;
+  padding:0.3rem;
+}
+.btn-user:hover{
+  border: 0.1rem solid black;
+  transition: 0.1s ease-in;
+   
+}
+.postHeader{
+  display:flex;
+  justify-content: center;
+  
+}
+.deBtn{
+  position: absolute;
+  right:5rem;
+  top:1.5rem;
 }
