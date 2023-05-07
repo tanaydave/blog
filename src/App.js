@@ -1,5 +1,6 @@
 
-import './App.css';
+// import './App.css';
+import './index.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home.js';
 import CreatePost from './pages/CreatePost';
@@ -19,17 +20,22 @@ function App() {
   };
   return (
 
-    <div className="App">
+    <div className="App ">
+     
+      
 
       <Router>
-        <nav className='navbar'>
-          <div className='navbar-div'>
-            <Link to="/">Home</Link>
+      
+        <nav className="flex flex-row justify-center ">
+          <div className=' flex flex-row p-4 navbar-div'>
+          {/* <div className='flex-1'> */}
+
+            <Link className="pr-8" to="/">Home</Link>
 
             {!isAuth ? <Link to="/login">Login</Link> :
               <>
                 <Link to="/create">Create</Link>
-                <button className='btn-user' onClick={signUserOut}> Sign Out</button>
+                <button className='btn-user pl-8' onClick={signUserOut}> Sign Out</button>
               </>
             }
           </div>

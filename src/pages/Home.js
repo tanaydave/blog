@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { db, auth } from "../firebaseConfig";
 const Home = (isAuth) => {
@@ -10,23 +11,28 @@ const Home = (isAuth) => {
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id)
     await deleteDoc(postDoc);
+    getPosts();
+  }
+  const getPosts = async () => {
+    var data = await getDocs(postsCollectionRef);
+    setPostsLists(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   }
 
  { useEffect(() => {
-    const getPosts = async () => {
-      var data = await getDocs(postsCollectionRef);
-      setPostsLists(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    }
-    getPosts()
+    // const getPosts = async () => {
+    //   var data = await getDocs(postsCollectionRef);
+    //   setPostsLists(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    // }
+    getPosts();
   }, []
   )
   console.log(auth)
   return (
-    <div className="homePage">{postLists.map((post) => {
+    <div className="homePage p-4 grid grid-cols-3">{postLists.map((post) => {
       return (
-        <div className="post">
-          <div className="postHeader">
-            <div className="title">
+        <div className="post w-400 p-4 border-4 m-4 ">
+          <div className="postHeader flex justify-between">
+            <div className="title ">
               <h1> {post.title}</h1>
             </div>
             <div className="deletePost">
